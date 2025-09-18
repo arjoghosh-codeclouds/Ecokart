@@ -73,10 +73,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
     cartItemsContainer.innerHTML = "";
 
-    if (items.length === 0) {
-      cartItemsContainer.innerHTML = `<p class="text-gray-600 dark:text-gray-300">Your cart is empty.</p>`;
-      return;
-    }
+   if (items.length === 0) {
+  cartItemsContainer.innerHTML = `<p class="text-gray-600 dark:text-gray-300">Your cart is empty.</p>`;
+  
+  // Reset all totals
+  cartSubtotalElement.textContent = "0.00";
+  cartDiscountElement.textContent = "0.00";
+  cartShippingElement.textContent = "0.00";
+  cartTaxElement.textContent = "0.00";
+  cartTotalElement.textContent = "0.00";
+  cartCountElement.textContent = "0";
+
+  discountLine.classList.add("hidden");
+  
+  return;
+}
+
 
     fetch("./data/products.json")
       .then((res) => res.json())
