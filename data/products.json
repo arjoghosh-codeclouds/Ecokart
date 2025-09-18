@@ -1,0 +1,254 @@
+[
+  {
+    "id": 1,
+    "name": "Fairphone 6",
+    "price": 55999,
+    "image": "./images/fairphone.jpg",
+    "category": "Electronics",
+    "description": {
+      "summary": "Modular sustainable smartphone made with fair-trade, recycled materials.",
+      "highlights": [
+        "Modular design for easy repair",
+        "Made with recycled plastics & aluminum",
+        "Fair-trade certified supply chain",
+        "5G connectivity with long battery life"
+      ],
+      "reviews": [
+        { "user": "Rahul", "comment": "Best ethical phone in the market!", "rating": 5 },
+        { "user": "Priya", "comment": "Performance is decent, but love the eco mission.", "rating": 4 }
+      ],
+      "rating": 4.6
+    }
+  },
+  {
+    "id": 2,
+    "name": "House of Marley - Headphones",
+    "price": 12999,
+    "image": "./images/marley-headphone.jpg",
+    "category": "Electronics",
+    "description": {
+      "summary": "Wireless headphones crafted from FSC-certified wood and recycled aluminum.",
+      "highlights": [
+        "40mm high-definition drivers",
+        "Made with recycled aluminum & fabrics",
+        "30-hour playback",
+        "Memory foam ear cushions"
+      ],
+      "reviews": [
+        { "user": "Amit", "comment": "Sound quality is premium and eco-friendly build feels solid.", "rating": 5 },
+        { "user": "Sneha", "comment": "Slightly bulky but very sustainable.", "rating": 4 }
+      ],
+      "rating": 4.4
+    }
+  },
+  {
+    "id": 3,
+    "name": "Organic Cotton Men's Casual Shirt",
+    "price": 1499,
+    "image": "./images/nasties-shirt.jpg",
+    "category": "Fashion",
+    "description": {
+      "summary": "Fair-trade certified men’s casual shirt made from 100% organic cotton.",
+      "highlights": [
+        "Organic cotton, GOTS certified",
+        "Plant-based non-toxic dyes",
+        "Fair wages for artisans",
+        "Plastic-free packaging"
+      ],
+      "reviews": [
+        { "user": "Karan", "comment": "Very soft and breathable, excellent fit.", "rating": 5 },
+        { "user": "Aditya", "comment": "Good fabric, shrinks a little after wash.", "rating": 4 }
+      ],
+      "rating": 4.5
+    }
+  },
+  {
+    "id": 4,
+    "name": "Adidas Stan Smith Sneakers",
+    "price": 6999,
+    "image": "./images/stan-smith-sneakers.jpg",
+    "category": "Fashion",
+    "description": {
+      "summary": "Classic sneakers redesigned with recycled polyester and vegan materials.",
+      "highlights": [
+        "Upper made with 50% recycled content",
+        "Vegan-friendly materials",
+        "Durable rubber outsole",
+        "Timeless sustainable design"
+      ],
+      "reviews": [
+        { "user": "Shreya", "comment": "Super stylish and eco-friendly choice.", "rating": 5 },
+        { "user": "Neha", "comment": "Runs slightly narrow, but love the sustainability factor.", "rating": 4 }
+      ],
+      "rating": 4.6
+    }
+  },
+  {
+    "id": 5,
+    "name": "GreenPan Ceramic Non-Stick Frying Pan",
+    "price": 2199,
+    "image": "./images/green-pan.jpg",
+    "category": "Home & Kitchen",
+    "description": {
+      "summary": "Healthy frying pan with PFAS, PFOA, lead, and cadmium-free ceramic coating.",
+      "highlights": [
+        "Ceramic non-stick coating",
+        "Made with recycled aluminum",
+        "Energy-efficient heating",
+        "Stay-cool handle"
+      ],
+      "reviews": [
+        { "user": "Pooja", "comment": "Safe for cooking and cleans easily.", "rating": 5 },
+        { "user": "Ravi", "comment": "Heats slower than Teflon, but healthier option.", "rating": 4 }
+      ],
+      "rating": 4.5
+    }
+  },
+  {
+    "id": 6,
+    "name": "Philips Eco Conscious Mixer Grinder",
+    "price": 3499,
+    "image": "./images/eco-mixer.jpg",
+    "category": "Home & Kitchen",
+    "description": {
+      "summary": "Energy-efficient mixer grinder with jars made from recyclable materials.",
+      "highlights": [
+        "Energy-efficient 750W motor",
+        "Recycled plastic body",
+        "Stainless steel jars",
+        "Eco packaging"
+      ],
+      "reviews": [
+        { "user": "Arjun", "comment": "Strong motor and sustainable design.", "rating": 5 },
+        { "user": "Sonal", "comment": "A bit noisy, but works well.", "rating": 4 }
+      ],
+      "rating": 4.4
+    }
+  },
+  {
+    "id": 7,
+    "name": "Ethletic Fairtrade Football",
+    "price": 1999,
+    "image": "./images/fair-trade-football.jpg",
+    "category": "Sports",
+    "description": {
+      "summary": "Fairtrade-certified football made with natural rubber and vegan materials.",
+      "highlights": [
+        "Fairtrade certified",
+        "Natural rubber bladder",
+        "Vegan leather outer",
+        "Durable hand-stitched panels"
+      ],
+      "reviews": [
+        { "user": "Vikram", "comment": "Feels just like a premium ball, eco-conscious too.", "rating": 5 },
+        { "user": "Rohit", "comment": "Quality is good, wears out a bit fast.", "rating": 4 }
+      ],
+      "rating": 4.3
+    }
+  },
+  {
+    "id": 8,
+    "name": "SG Cork Yoga Mat",
+    "price": 2499,
+    "image": "./images/cork-yoga-mat.jpg",
+    "category": "Sports",
+    "description": {
+      "summary": "Biodegradable yoga mat made with natural cork and tree rubber.",
+      "highlights": [
+        "Organic cork surface",
+        "Anti-slip grip",
+        "Natural rubber cushioning",
+        "Sweat-resistant & durable"
+      ],
+      "reviews": [
+        { "user": "Ananya", "comment": "Amazing grip and eco build!", "rating": 5 },
+        { "user": "Meera", "comment": "Edges curl a little, but overall great.", "rating": 4 }
+      ],
+      "rating": 4.5
+    }
+  },
+  {
+    "id": 9,
+    "name": "Learn Python the Green Way",
+    "price": 799,
+    "image": "./images/eco-python.jpg",
+    "category": "Books",
+    "description": {
+      "summary": "Python programming guide printed on recycled paper using vegetable inks.",
+      "highlights": [
+        "Printed on FSC-certified recycled paper",
+        "Soy-based vegetable ink",
+        "Beginner projects included",
+        "Plastic-free packaging"
+      ],
+      "reviews": [
+        { "user": "Deepak", "comment": "Loved the eco-friendly book design.", "rating": 5 },
+        { "user": "Isha", "comment": "Good content, paper is thinner than usual.", "rating": 4 }
+      ],
+      "rating": 4.4
+    }
+  },
+  {
+    "id": 10,
+    "name": "Fauna-By Christine Fadnais",
+    "price": 599,
+    "image": "./images/eco-novel.jpg",
+    "category": "Books",
+    "description": {
+      "summary": "Thriller novel sustainably printed on recycled paper with eco-inks.",
+      "highlights": [
+        "Recycled paper",
+        "Vegetable-based ink",
+        "Plastic-free packaging",
+        "Lightweight eco print"
+      ],
+      "reviews": [
+        { "user": "Kabir", "comment": "Great story, sustainable edition rocks!", "rating": 5 },
+        { "user": "Ritika", "comment": "Loved the print quality, eco-friendly touch.", "rating": 4 }
+      ],
+      "rating": 4.5
+    }
+  },
+  {
+    "id": 11,
+    "name": "Organic Face Cream",
+    "price": 749,
+    "image": "./images/face-cream.jpg",
+    "category": "Beauty",
+    "description": {
+      "summary": "Organic moisturizer made with aloe, shea butter, and packed in eco jars.",
+      "highlights": [
+        "Certified organic ingredients",
+        "Plastic-free packaging",
+        "SPF 20 with minerals",
+        "Cruelty-free & vegan"
+      ],
+      "reviews": [
+        { "user": "Simran", "comment": "Best natural cream I’ve used!", "rating": 5 },
+        { "user": "Manish", "comment": "Expensive but worth it.", "rating": 4 }
+      ],
+      "rating": 4.6
+    }
+  },
+  {
+    "id": 12,
+    "name": "Disguise Cosmetics Eco Lipstick Set",
+    "price": 1299,
+    "image": "./images/eco-lipstick.jpg",
+    "category": "Beauty",
+    "description": {
+      "summary": "Vegan lipsticks made from natural pigments in compostable packaging.",
+      "highlights": [
+        "Vegan & cruelty-free",
+        "Natural plant pigments",
+        "Plastic-free compostable tubes",
+        "Long-lasting matte finish"
+      ],
+      "reviews": [
+        { "user": "Pallavi", "comment": "Colors are gorgeous and eco-safe!", "rating": 5 },
+        { "user": "Renu", "comment": "Slightly dry but overall worth it.", "rating": 4 }
+      ],
+      "rating": 4.5
+    }
+  }
+]

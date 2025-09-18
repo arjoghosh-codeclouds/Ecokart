@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EcoKart - Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+    <script defer src="js/main.js"></script>
+  </head>
+  <body class="bg-gray-50 text-gray-800">
+    <!-- Navbar -->
+
+    <nav class="bg-gray-800 shadow-lg">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16 items-center">
+          <!-- Logo -->
+          <div class="flex-shrink-0 flex items-center">
+            <a href="index.html" class="text-2xl font-extrabold tracking-wide">
+              <span class="text-green-500">Eco</span>
+              <span class="text-white">Kart</span>
+            </a>
+          </div>
+
+          <!-- Desktop Menu -->
+          <div class="hidden sm:flex sm:space-x-6 items-center">
+            <a
+              href="#products"
+              class="text-gray-300 text-base font-semibold px-4 py-2 rounded-md transition-all duration-300 hover:text-white hover:bg-green-700 hover:bg-opacity-20"
+              >Products</a
+            >
+            <a
+              href="team.html"
+              class="text-gray-300 text-base font-semibold px-4 py-2 rounded-md transition-all duration-300 hover:text-white hover:bg-green-700 hover:bg-opacity-20"
+              >Team</a
+            >
+
+            <!-- Cart beside Team -->
+            <a
+              href="checkout.html"
+              class="relative flex items-center text-gray-300 text-base font-semibold px-4 py-2 rounded-md transition-all duration-300 hover:text-white hover:bg-green-700 hover:bg-opacity-20 ml-2"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5 mr-1"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 9m5-9v9m4-9v9m5-9l2 9"
+                />
+              </svg>
+              <span>Cart</span>
+              <span
+                id="cart-count"
+                class="ml-1 bg-red-500 text-white rounded-full px-2 text-xs font-bold absolute -top-2 -right-2 transition-transform duration-300 ease-out"
+                >0</span
+              >
+            </a>
+
+            <!-- Search Bar -->
+            <div class="ml-6 relative">
+              <input
+                type="text"
+                id="search-input"
+                placeholder="Search products..."
+                class="pl-4 pr-10 py-2 w-48 md:w-48 lg:w-48 rounded-full text-sm shadow-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all duration-300 bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white hover:shadow-lg search-expand"
+              />
+              <button
+                class="absolute right-0 top-1/2 transform -translate-y-1/2 mr-3 text-gray-500 hover:text-green-500 transition-colors duration-300"
+                onclick="document.getElementById('products').scrollIntoView({ behavior: 'smooth' })"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1110.5 3a7.5 7.5 0 016.15 13.65z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Mobile Hamburger -->
+          <div class="sm:hidden flex items-center">
+            <button
+              id="menu-toggle"
+              class="text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-white transition-colors duration-300"
+            >
+              ☰
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden sm:hidden px-2 pt-2 pb-3 space-y-1">
+        <a
+          hr-ef="#products"
+          class="block px-3 py-2 rounded-md text-base font-medium text-white bg-gray-900"
+          >Products</a
+        >
+        <a
+          href="team.html"
+          class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+          >Team</a
+        >
+        <a
+          href="checkout.html"
+          class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+          >Cart</a
+        >
+
+        <div
+          id="mobile-search-container"
+          class="px-3 py-2 flex items-center space-x-2 bg-gray-700 rounded-lg"
+        >
+          <input
+            type="text"
+            id="mobile-search-input"
+            placeholder="Search..."
+            class="w-full px-3 py-2 rounded-full border focus:outline-none focus:ring-2 focus:ring-green-500"
+          />
+          <button
+            id="mobile-search-submit"
+            class="px-3 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600"
+          >
+            🔍
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Cart Animation -->
+    <script>
+      function animateCart() {
+        const badge = document.getElementById("cart-count");
+        badge.classList.add("scale-125");
+        setTimeout(() => badge.classList.remove("scale-125"), 300);
+      }
+    </script>
+    <script>
+      // Hamburger menu toggle
+      const menuToggle = document.getElementById("menu-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
+      menuToggle?.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+    </script>
+
+    <style>
+      #cart-count {
+        transform-origin: center;
+      }
+      #cart-count.scale-125 {
+        transform: scale(1.25);
+      }
+
+      /* Search bar expand animation */
+      .search-expand {
+        width: 12rem;
+        transition: width 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      }
+      .search-expand:focus {
+        width: 20rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+      }
+    </style>
+
+    <!-- Cart animation script -->
+    <script>
+      function animateCart() {
+        const badge = document.getElementById("cart-count");
+        badge.classList.add("scale-125");
+        setTimeout(() => badge.classList.remove("scale-125"), 300);
+      }
+    </script>
+
+    <style>
+      #cart-count {
+        transform-origin: center;
+      }
+      #cart-count.scale-125 {
+        transform: scale(1.25);
+      }
+    </style>
+
+    <!-- Hero Section -->
+    <!-- <div id="default-carousel" class="relative w-full" data-carousel="slide">
+  <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+      <img src="https://media.istockphoto.com/id/1364432191/photo/travel-concept-background-luggage-at-airport.jpg?s=612x612&w=0&k=20&c=WvokB61pcLlKcgK7ze4wcj1xv4i9gLS15_4h-P3U0Fk=" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+    </div>
+    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+      <img src="https://media.istockphoto.com/id/146887434/photo/carousel.jpg?s=612x612&w=0&k=20&c=43f1n5EipmOFX9DfUBGAw2SJP6r232WsQaI8DzaXi64=" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+    </div>
+    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+      <img src="https://media.istockphoto.com/id/1516920214/photo/part-of-carousel-by-the-eiffel-tower-in-paris-on-sunset-background-france.jpg?s=612x612&w=0&k=20&c=dxSSjMBueZEMfX5YNB-fFVWebu3KN89eAS1tkTHHaWU=" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+    </div>
+    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+      <img src="https://media.istockphoto.com/id/2177880293/photo/ferris-wheel-with-sky-background.jpg?s=612x612&w=0&k=20&c=Bpwl6dkaD4Z4fuMhOsNfQY236HcRc4Ss92VOfgSyGrc=" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+    </div>
+  </div>
+</div> -->
+
+    <section
+      class="overflow-hidden bg-[url(https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?q=80&w=2670&auto=format&fit=crop)] bg-cover bg-top bg-no-repeat h-[600px] md:h-[700px] lg:h-[650px]"
+    >
+      <div
+        class="bg-black/50 p-8 md:p-12 lg:px-16 lg:py-24 flex items-center h-full"
+      >
+        <div class="text-center sm:text-left">
+          <h2 class="text-3xl font-bold text-white sm:text-4xl md:text-6xl">
+            Latest Shirts Collection
+          </h2>
+
+          <p
+            class="hidden max-w-lg text-white/90 mt-4 md:mt-6 md:block md:text-lg md:leading-relaxed"
+          >
+            Upgrade your wardrobe today! Grab your favorite styles at
+            <span class="font-bold text-yellow-400">50% OFF</span> for a limited
+            time only.
+          </p>
+
+          <div class="mt-6 sm:mt-8">
+            <a
+              href="#products"
+              class="inline-block rounded-full bg-indigo-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-indigo-700 focus:ring-3 focus:ring-yellow-400 focus:outline-none"
+            >
+              Shop Now
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="py-8 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl font-bold mb-6 text-gray-900">Shop by Category</h2>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
+          <div
+            class="category-item flex flex-col items-center bg-white p-4 rounded-lg shadow hover:shadow-lg cursor-pointer"
+            data-category="Electronics"
+          >
+            <img
+              src="./images/carousel/electronics.jpg"
+              alt="Electronics"
+              class="h-16 w-16 mb-2 object-contain"
+            />
+            <span class="text-gray-800 font-medium text-sm">Electronics</span>
+          </div>
+          <div
+            class="category-item flex flex-col items-center bg-white p-4 rounded-lg shadow hover:shadow-lg cursor-pointer"
+            data-category="Fashion"
+          >
+            <img
+              src="./images/carousel/fashion.jpg"
+              alt="Fashion"
+              class="h-16 w-16 mb-2 object-contain"
+            />
+            <span class="text-gray-800 font-medium text-sm">Fashion</span>
+          </div>
+          <div
+            class="category-item flex flex-col items-center bg-white p-4 rounded-lg shadow hover:shadow-lg cursor-pointer"
+            data-category="Home & Kitchen"
+          >
+            <img
+              src="./images/carousel/kitchen.jpg"
+              alt="Home & Kitchen"
+              class="h-16 w-16 mb-2 object-contain"
+            />
+            <span class="text-gray-800 font-medium text-sm"
+              >Home & Kitchen</span
+            >
+          </div>
+          <div
+            class="category-item flex flex-col items-center bg-white p-4 rounded-lg shadow hover:shadow-lg cursor-pointer"
+            data-category="Sports"
+          >
+            <img
+              src="./images/carousel/sports.jpg"
+              alt="Sports"
+              class="h-16 w-16 mb-2 object-contain"
+            />
+            <span class="text-gray-800 font-medium text-sm">Sports</span>
+          </div>
+          <div
+            class="category-item flex flex-col items-center bg-white p-4 rounded-lg shadow hover:shadow-lg cursor-pointer"
+            data-category="Books"
+          >
+            <img
+              src="./images/carousel/books.jpg"
+              alt="Books"
+              class="h-16 w-16 mb-2 object-contain"
+            />
+            <span class="text-gray-800 font-medium text-sm">Books</span>
+          </div>
+          <div
+            class="category-item flex flex-col items-center bg-white p-4 rounded-lg shadow hover:shadow-lg cursor-pointer"
+            data-category="Beauty"
+          >
+            <img
+              src="./images/carousel/beauty.jpg"
+              alt="Beauty"
+              class="h-16 w-16 mb-2 object-contain"
+            />
+            <span class="text-gray-800 font-medium text-sm">Beauty</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products -->
+    <section class="py-8 bg-gray-100" id="products">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl font-bold mb-6 text-gray-900">Products</h2>
+        <div
+          id="product-grid"
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+        >
+          <!-- Products load dynamically -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-300 py-8 mt-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="mb-4 md:mb-0">
+            <h2 class="text-xl font-bold text-white">EcoKart</h2>
+            <p class="text-sm">Sustainable shopping for a greener tomorrow.</p>
+          </div>
+          <div class="flex space-x-6">
+            <a href="checkout.html" class="hover:text-white">Cart</a>
+            <a href="mailto:arjoghosh123@gmail.com" class="hover:text-white"
+              >Contact</a
+            >
+            <a href="team.html" class="hover:text-white">Teams</a>
+          </div>
+        </div>
+        <div class="mt-6 text-center text-sm text-gray-500">
+          © 2025 EcoKart. All rights reserved to Arjo Ghosh
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

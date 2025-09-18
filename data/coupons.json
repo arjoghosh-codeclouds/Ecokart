@@ -1,0 +1,10 @@
+[
+{ "code": "WELCOME100", "type": "percent", "value": 10 },
+{ "code": "FLAT250", "type": "flat", "value": 250 },
+{ "code": "SAVE200", "type": "percent", "value": 20 },
+{ "code": "SAVE300", "type": "percent", "value": 30 },
+{ "code": "SAVE100", "type": "percent", "value": 10 },
+{ "code": "SAVE400", "type": "percent", "value": 35 },
+{ "code": "FLAT200", "type": "flat", "value": 200 },
+{ "code": "FLAT150", "type": "flat", "value": 150 }
+]

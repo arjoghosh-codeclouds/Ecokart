@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EcoKart - Product</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="js/product.js"></script>
+  </head>
+  <body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+    <!-- Navbar -->
+    <nav class="relative bg-gray-800">
+      <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+        <div class="relative flex h-16 items-center justify-between">
+          <!-- Logo -->
+          <div
+            class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start"
+          >
+            <a
+              href="index.html"
+              class="text-2xl font-extrabold tracking-wide text-green-400"
+            >
+              Eco<span class="text-white">Kart</span>
+            </a>
+          </div>
+
+          <!-- Right Section: Cart + Profile -->
+          <div
+            class="absolute inset-y-0 right-0 flex items-center space-x-4 sm:static sm:inset-auto sm:ml-6 sm:pr-0"
+          >
+            <!-- Cart -->
+            <a
+              href="checkout.html"
+              class="relative flex items-center bg-white text-green-700 px-3 py-1.5 rounded-full font-medium shadow hover:bg-gray-100 transition"
+            >
+              🛒
+              <span class="ml-2">Cart</span>
+              <span
+                id="cart-count"
+                class="ml-2 bg-gray-800 text-white rounded-full px-2 text-xs"
+                >0</span
+              >
+            </a>
+
+            <!-- Profile dropdown -->
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Product details -->
+    <main class="p-6 max-w-4xl mx-auto">
+      <div
+        id="product-details"
+        class="bg-white dark:bg-gray-800 shadow rounded-lg p-6"
+      >
+        <!-- Dynamic product data will be injected by product.js -->
+      </div>
+    </main>
+  </body>
+</html>
