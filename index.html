@@ -7,140 +7,197 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
     <script defer src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@clerk/clerk-js@latest/dist/clerk.browser.js" crossorigin="anonymous"></script>
   </head>
   <body class="bg-gray-50 text-gray-800">
     <!-- Navbar -->
-
-    <nav class="bg-gray-800 shadow-lg">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-16 items-center">
-          <!-- Logo -->
-          <div class="flex-shrink-0 flex items-center">
-            <a href="index.html" class="text-2xl font-extrabold tracking-wide">
-              <span class="text-green-500">Eco</span>
-              <span class="text-white">Kart</span>
-            </a>
-          </div>
-
-          <!-- Desktop Menu -->
-          <div class="hidden sm:flex sm:space-x-6 items-center">
-            <a
-              href="#products"
-              class="text-gray-300 text-base font-semibold px-4 py-2 rounded-md transition-all duration-300 hover:text-white hover:bg-green-700 hover:bg-opacity-20"
-              >Products</a
-            >
-            <a
-              href="team.html"
-              class="text-gray-300 text-base font-semibold px-4 py-2 rounded-md transition-all duration-300 hover:text-white hover:bg-green-700 hover:bg-opacity-20"
-              >Team</a
-            >
-
-            <!-- Cart beside Team -->
-            <a
-              href="checkout.html"
-              class="relative flex items-center text-gray-300 text-base font-semibold px-4 py-2 rounded-md transition-all duration-300 hover:text-white hover:bg-green-700 hover:bg-opacity-20 ml-2"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5 mr-1"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 9m5-9v9m4-9v9m5-9l2 9"
-                />
-              </svg>
-              <span>Cart</span>
-              <span
-                id="cart-count"
-                class="ml-1 bg-red-500 text-white rounded-full px-2 text-xs font-bold absolute -top-2 -right-2 transition-transform duration-300 ease-out"
-                >0</span
-              >
-            </a>
-
-            <!-- Search Bar -->
-            <div class="ml-6 relative">
-              <input
-                type="text"
-                id="search-input"
-                placeholder="Search products..."
-                class="pl-4 pr-10 py-2 w-48 md:w-48 lg:w-48 rounded-full text-sm shadow-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all duration-300 bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white hover:shadow-lg search-expand"
-              />
-              <button
-                class="absolute right-0 top-1/2 transform -translate-y-1/2 mr-3 text-gray-500 hover:text-green-500 transition-colors duration-300"
-                onclick="document.getElementById('products').scrollIntoView({ behavior: 'smooth' })"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-5 w-5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1110.5 3a7.5 7.5 0 016.15 13.65z"
-                  />
-                </svg>
-              </button>
-            </div>
-          </div>
-
-          <!-- Mobile Hamburger -->
-          <div class="sm:hidden flex items-center">
-            <button
-              id="menu-toggle"
-              class="text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-white transition-colors duration-300"
-            >
-              ☰
-            </button>
-          </div>
-        </div>
+    <!-- Navbar -->
+<nav class="bg-gray-800 shadow-lg">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between h-16 items-center">
+      <!-- Logo -->
+      <div class="flex-shrink-0 flex items-center">
+        <a href="index.html" class="text-2xl font-extrabold tracking-wide">
+          <span class="text-green-500">Eco</span>
+          <span class="text-white">Kart</span>
+        </a>
       </div>
 
-      <!-- Mobile Menu -->
-      <div id="mobile-menu" class="hidden sm:hidden px-2 pt-2 pb-3 space-y-1">
+      <!-- Desktop Menu -->
+      <div class="hidden sm:flex sm:space-x-6 items-center">
         <a
-          hr-ef="#products"
-          class="block px-3 py-2 rounded-md text-base font-medium text-white bg-gray-900"
-          >Products</a
+          href="#about"
+          class="text-gray-300 text-base font-semibold px-4 py-2 rounded-md transition-all duration-300 hover:text-white hover:bg-green-700 hover:bg-opacity-20"
+          >About Us</a
         >
         <a
           href="team.html"
-          class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+          class="text-gray-300 text-base font-semibold px-4 py-2 rounded-md transition-all duration-300 hover:text-white hover:bg-green-700 hover:bg-opacity-20"
           >Team</a
         >
+        <!-- Wishlist -->
+        <a
+          href="wishlist.html"
+          class="relative flex items-center text-gray-300 text-base font-semibold px-4 py-2 rounded-md transition-all duration-300 hover:text-white hover:bg-green-700 hover:bg-opacity-20"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5 mr-1"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+            />
+          </svg>
+          <span>Wishlist</span>
+          <span
+            id="wishlist-count"
+            class="ml-1 bg-red-500 text-white rounded-full px-2 text-xs font-bold absolute -top-2 -right-2 transition-transform duration-300 ease-out"
+            >0</span
+          >
+        </a>
+        <!-- Cart -->
         <a
           href="checkout.html"
-          class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-          >Cart</a
+          class="relative flex items-center text-gray-300 text-base font-semibold px-4 py-2 rounded-md transition-all duration-300 hover:text-white hover:bg-green-700 hover:bg-opacity-20"
         >
-
-        <div
-          id="mobile-search-container"
-          class="px-3 py-2 flex items-center space-x-2 bg-gray-700 rounded-lg"
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5 mr-1"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 9m5-9v9m4-9v9m5-9l2 9"
+            />
+          </svg>
+          <span>Cart</span>
+          <span
+            id="cart-count"
+            class="ml-1 bg-red-500 text-white rounded-full px-2 text-xs font-bold absolute -top-2 -right-2 transition-transform duration-300 ease-out"
+            >0</span
+          >
+        </a>
+        <!-- User Authentication -->
+        <a
+          href="login.html"
+          id="user-auth"
+          class="relative flex items-center text-gray-300 text-base font-semibold px-4 py-2 rounded-md transition-all duration-300 hover:text-white hover:bg-green-700 hover:bg-opacity-20"
         >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5 mr-1"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+            />
+          </svg>
+          <span id="user-auth-text">Login</span>
+        </a>
+        <!-- Search Bar -->
+        <div class="ml-6 relative">
           <input
             type="text"
-            id="mobile-search-input"
-            placeholder="Search..."
-            class="w-full px-3 py-2 rounded-full border focus:outline-none focus:ring-2 focus:ring-green-500"
+            id="search-input"
+            placeholder="Search products..."
+            class="pl-4 pr-10 py-2 w-48 md:w-48 lg:w-48 rounded-full text-sm shadow-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all duration-300 bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white hover:shadow-lg search-expand"
           />
           <button
-            id="mobile-search-submit"
-            class="px-3 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600"
+            class="absolute right-0 top-1/2 transform -translate-y-1/2 mr-3 text-gray-500 hover:text-green-500 transition-colors duration-300"
+            onclick="document.getElementById('products').scrollIntoView({ behavior: 'smooth' })"
           >
-            🔍
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1110.5 3a7.5 7.5 0 016.15 13.65z"
+              />
+            </svg>
           </button>
         </div>
       </div>
-    </nav>
+
+      <!-- Mobile Hamburger -->
+      <div class="sm:hidden flex items-center">
+        <button
+          id="menu-toggle"
+          class="text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-white transition-colors duration-300"
+        >
+          ☰
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden sm:hidden px-2 pt-2 pb-3 space-y-1">
+    <a
+      href="#about"
+      class="block px-3 py-2 rounded-md text-base font-medium text-white bg-gray-900"
+      >About Us</a
+    >
+    <a
+      href="team.html"
+      class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+      >Team</a
+    >
+    <a
+      href="wishlist.html"
+      class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+      >Wishlist <span id="mobile-wishlist-count" class="ml-1 bg-red-500 text-white rounded-full px-2 text-xs font-bold">0</span></a
+    >
+    <a
+      href="checkout.html"
+      class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+      >Cart <span id="mobile-cart-count" class="ml-1 bg-red-500 text-white rounded-full px-2 text-xs font-bold">0</span></a
+    >
+    <a
+      href="login.html"
+      id="mobile-user-auth"
+      class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+      ><span id="mobile-user-auth-text">Login</span></a
+    >
+    <div
+      id="mobile-search-container"
+      class="px-3 py-2 flex items-center space-x-2 bg-gray-700 rounded-lg"
+    >
+      <input
+        type="text"
+        id="mobile-search-input"
+        placeholder="Search..."
+        class="w-full px-3 py-2 rounded-full border focus:outline-none focus:ring-2 focus:ring-green-500"
+      />
+      <button
+        id="mobile-search-submit"
+        class="px-3 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600"
+      >
+        🔍
+      </button>
+    </div>
+  </div>
+</nav>
 
     <!-- Cart Animation -->
     <script>
@@ -158,7 +215,7 @@
         mobileMenu.classList.toggle("hidden");
       });
     </script>
-
+  
     <style>
       #cart-count {
         transform-origin: center;
@@ -176,44 +233,29 @@
         width: 20rem;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
       }
+
+      /* Enhanced section header styling */
+      .section-header {
+        position: relative;
+        display: inline-block;
+        padding-bottom: 0.5rem;
+      }
+      .section-header::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50%;
+        height: 3px;
+        background: linear-gradient(to right, #10b981, #3b82f6);
+        transition: width 0.3s ease-in-out;
+      }
+      .section-header:hover::after {
+        width: 100%;
+      }
     </style>
 
-    <!-- Cart animation script -->
-    <script>
-      function animateCart() {
-        const badge = document.getElementById("cart-count");
-        badge.classList.add("scale-125");
-        setTimeout(() => badge.classList.remove("scale-125"), 300);
-      }
-    </script>
-
-    <style>
-      #cart-count {
-        transform-origin: center;
-      }
-      #cart-count.scale-125 {
-        transform: scale(1.25);
-      }
-    </style>
-
-    <!-- Hero Section -->
-    <!-- <div id="default-carousel" class="relative w-full" data-carousel="slide">
-  <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
-    <div class="hidden duration-700 ease-in-out" data-carousel-item>
-      <img src="https://media.istockphoto.com/id/1364432191/photo/travel-concept-background-luggage-at-airport.jpg?s=612x612&w=0&k=20&c=WvokB61pcLlKcgK7ze4wcj1xv4i9gLS15_4h-P3U0Fk=" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
-    </div>
-    <div class="hidden duration-700 ease-in-out" data-carousel-item>
-      <img src="https://media.istockphoto.com/id/146887434/photo/carousel.jpg?s=612x612&w=0&k=20&c=43f1n5EipmOFX9DfUBGAw2SJP6r232WsQaI8DzaXi64=" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
-    </div>
-    <div class="hidden duration-700 ease-in-out" data-carousel-item>
-      <img src="https://media.istockphoto.com/id/1516920214/photo/part-of-carousel-by-the-eiffel-tower-in-paris-on-sunset-background-france.jpg?s=612x612&w=0&k=20&c=dxSSjMBueZEMfX5YNB-fFVWebu3KN89eAS1tkTHHaWU=" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
-    </div>
-    <div class="hidden duration-700 ease-in-out" data-carousel-item>
-      <img src="https://media.istockphoto.com/id/2177880293/photo/ferris-wheel-with-sky-background.jpg?s=612x612&w=0&k=20&c=Bpwl6dkaD4Z4fuMhOsNfQY236HcRc4Ss92VOfgSyGrc=" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
-    </div>
-  </div>
-</div> -->
-
+    <!-- Hero Section with Countdown Timer and Promo Code -->
     <section
       class="overflow-hidden bg-[url(https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?q=80&w=2670&auto=format&fit=crop)] bg-cover bg-top bg-no-repeat h-[600px] md:h-[700px] lg:h-[650px]"
     >
@@ -224,7 +266,6 @@
           <h2 class="text-3xl font-bold text-white sm:text-4xl md:text-6xl">
             Latest Shirts Collection
           </h2>
-
           <p
             class="hidden max-w-lg text-white/90 mt-4 md:mt-6 md:block md:text-lg md:leading-relaxed"
           >
@@ -232,7 +273,18 @@
             <span class="font-bold text-yellow-400">50% OFF</span> for a limited
             time only.
           </p>
-
+          <!-- Countdown Timer -->
+          <div class="mt-4 text-white">
+            <p class="text-lg font-semibold">Hurry! Sale Ends In:</p>
+            <div id="countdown" class="text-2xl font-bold flex space-x-2 justify-center sm:justify-start">
+              <span id="days">00</span>:<span id="hours">00</span>:<span id="minutes">00</span>:<span id="seconds">00</span>
+            </div>
+          </div>
+          <!-- Promo Code -->
+          <div class="mt-4 flex items-center justify-center sm:justify-start">
+            <span class="text-white font-semibold mr-2">Use Promo Code:</span>
+            <span class="bg-yellow-400 text-black font-bold px-3 py-1 rounded">SAVE50</span>
+          </div>
           <div class="mt-6 sm:mt-8">
             <a
               href="#products"
@@ -245,13 +297,84 @@
       </div>
     </section>
 
+    <!-- Countdown Timer Script -->
+    <script>
+      function startCountdown() {
+        const endDate = new Date();
+        endDate.setDate(endDate.getDate() + 3); // Set sale to end in 3 days
+        const countdownElement = document.getElementById('countdown');
+        const daysElement = document.getElementById('days');
+        const hoursElement = document.getElementById('hours');
+        const minutesElement = document.getElementById('minutes');
+        const secondsElement = document.getElementById('seconds');
+
+        function updateCountdown() {
+          const now = new Date();
+          const timeLeft = endDate - now;
+
+          if (timeLeft <= 0) {
+            countdownElement.innerHTML = 'Sale Ended!';
+            return;
+          }
+
+          const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+          daysElement.textContent = String(days).padStart(2, '0');
+          hoursElement.textContent = String(hours).padStart(2, '0');
+          minutesElement.textContent = String(minutes).padStart(2, '0');
+          secondsElement.textContent = String(seconds).padStart(2, '0');
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+      }
+
+      document.addEventListener('DOMContentLoaded', startCountdown);
+    </script>
+
+    <!-- Deal of the Day Section -->
+    <section class="py-8 bg-gray-50" id="deal-of-the-day">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl font-bold mb-6 text-gray-900 section-header">
+          Deal of the Day
+        </h2>
+        <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-all duration-300">
+          <div class="flex flex-col md:flex-row items-center">
+            <img
+              src="./images/bamboo-watch.jpg"
+              alt="Deal of the Day"
+              class="w-full md:w-1/3 h-48 object-contain rounded-lg mb-4 md:mb-0 md:mr-6"
+            />
+            <div class="flex-1">
+              <h3 class="text-xl font-semibold text-gray-900">Eco-Friendly Bamboo Watch</h3>
+              <p class="text-gray-700 mt-2">Sustainable style meets precision. Crafted from 100% bamboo with a minimalist design.</p>
+              <p class="text-red-600 font-bold mt-2 text-lg">₹2,999 <span class="line-through text-gray-500">₹4,999</span> (40% OFF)</p>
+              <div class="mt-4">
+                <a
+                  href="#products"
+                  class="inline-block rounded-full bg-red-600 px-8 py-3 text-sm font-medium text-white transition hover:bg-red-700 focus:ring-3 focus:ring-yellow-400 focus:outline-none"
+                >
+                  Grab the Deal
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Categories -->
     <section class="py-8 bg-gray-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-2xl font-bold mb-6 text-gray-900">Shop by Category</h2>
+        <h2 class="text-2xl font-bold mb-6 text-gray-900 section-header">
+          Shop by Category
+        </h2>
         <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
           <div
-            class="category-item flex flex-col items-center bg-white p-4 rounded-lg shadow hover:shadow-lg cursor-pointer"
+            class="category-item flex flex-col items-center bg-white p-4 rounded-lg shadow hover:shadow-lg cursor-pointer transition-all duration-300 hover:scale-105"
             data-category="Electronics"
           >
             <img
@@ -262,7 +385,7 @@
             <span class="text-gray-800 font-medium text-sm">Electronics</span>
           </div>
           <div
-            class="category-item flex flex-col items-center bg-white p-4 rounded-lg shadow hover:shadow-lg cursor-pointer"
+            class="category-item flex flex-col items-center bg-white p-4 rounded-lg shadow hover:shadow-lg cursor-pointer transition-all duration-300 hover:scale-105"
             data-category="Fashion"
           >
             <img
@@ -273,7 +396,7 @@
             <span class="text-gray-800 font-medium text-sm">Fashion</span>
           </div>
           <div
-            class="category-item flex flex-col items-center bg-white p-4 rounded-lg shadow hover:shadow-lg cursor-pointer"
+            class="category-item flex flex-col items-center bg-white p-4 rounded-lg shadow hover:shadow-lg cursor-pointer transition-all duration-300 hover:scale-105"
             data-category="Home & Kitchen"
           >
             <img
@@ -286,7 +409,7 @@
             >
           </div>
           <div
-            class="category-item flex flex-col items-center bg-white p-4 rounded-lg shadow hover:shadow-lg cursor-pointer"
+            class="category-item flex flex-col items-center bg-white p-4 rounded-lg shadow hover:shadow-lg cursor-pointer transition-all duration-300 hover:scale-105"
             data-category="Sports"
           >
             <img
@@ -297,7 +420,7 @@
             <span class="text-gray-800 font-medium text-sm">Sports</span>
           </div>
           <div
-            class="category-item flex flex-col items-center bg-white p-4 rounded-lg shadow hover:shadow-lg cursor-pointer"
+            class="category-item flex flex-col items-center bg-white p-4 rounded-lg shadow hover:shadow-lg cursor-pointer transition-all duration-300 hover:scale-105"
             data-category="Books"
           >
             <img
@@ -308,7 +431,7 @@
             <span class="text-gray-800 font-medium text-sm">Books</span>
           </div>
           <div
-            class="category-item flex flex-col items-center bg-white p-4 rounded-lg shadow hover:shadow-lg cursor-pointer"
+            class="category-item flex flex-col items-center bg-white p-4 rounded-lg shadow hover:shadow-lg cursor-pointer transition-all duration-300 hover:scale-105"
             data-category="Beauty"
           >
             <img
@@ -322,39 +445,476 @@
       </div>
     </section>
 
-    <!-- Products -->
+    <!-- Products (On Sale, New Arrivals, Coming Soon in 3-column grid) -->
     <section class="py-8 bg-gray-100" id="products">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-2xl font-bold mb-6 text-gray-900">Products</h2>
-        <div
-          id="product-grid"
-          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
-        >
-          <!-- Products load dynamically -->
+        <h2 class="text-2xl font-bold mb-6 text-gray-900 section-header">
+          Our Products
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- On Sale -->
+          <div
+            class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-all duration-300"
+          >
+            <h3 class="text-xl font-semibold mb-4 text-gray-900 section-header">
+              On Sale
+            </h3>
+            <div id="on-sale-grid" class="space-y-4">
+              <!-- Products load dynamically -->
+            </div>
+          </div>
+          <!-- New Arrivals -->
+          <div
+            class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-all duration-300"
+          >
+            <h3 class="text-xl font-semibold mb-4 text-gray-900 section-header">
+              New Arrivals
+            </h3>
+            <div id="new-arrivals-grid" class="space-y-4">
+              <!-- Products load dynamically -->
+            </div>
+          </div>
+          <!-- Coming Soon -->
+          <div
+            class="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-all duration-300"
+          >
+            <h3 class="text-xl font-semibold mb-4 text-gray-900 section-header">
+              Coming Soon
+            </h3>
+            <div id="coming-soon-grid" class="space-y-4">
+              <!-- Products load dynamically -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Us -->
+    <section class="py-12 bg-gray-50" id="about">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold mb-8 text-gray-900 section-header">
+          About EcoKart
+        </h2>
+        <div class="grid gap-6 md:grid-cols-2">
+          <!-- Main Content Card -->
+          <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border-l-4 border-red-600">
+            <h3 class="text-xl font-semibold text-gray-900 mb-4">Our Mission</h3>
+            <p class="text-gray-700 leading-relaxed">
+              At EcoKart, we’re passionate about sustainable shopping. Founded in 2023, our mission is to make eco-friendly living accessible by offering high-quality, environmentally responsible products. From organic fashion to renewable energy gadgets, every item is carefully curated to align with our values of sustainability, innovation, and ethical sourcing.
+            </p>
+            <p class="text-gray-700 leading-relaxed mt-4">
+              We believe small choices can create big change. By partnering with ethical suppliers and prioritizing recycled, biodegradable, and fair-trade materials, we aim to reduce environmental impact and inspire a greener lifestyle. Join us in making a difference, one purchase at a time.
+            </p>
+          </div>
+          <!-- Quote Card -->
+          <div class="bg-green-50 p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col justify-center">
+            <blockquote class="text-lg italic text-gray-800 border-l-4 border-red-600 pl-4">
+              "The greatest threat to our planet is the belief that someone else will save it."
+              <footer class="mt-2 text-sm text-gray-600">
+                — Robert Swan, Polar Explorer & Environmentalist
+              </footer>
+            </blockquote>
+            <p class="text-gray-700 mt-6 leading-relaxed">
+              At EcoKart, we empower you to take action through sustainable choices that protect our planet for future generations.
+            </p>
+          </div>
+        </div>
+        <!-- Impact Stats -->
+        <div class="mt-8 grid gap-6 sm:grid-cols-3">
+          <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition-all duration-300 text-center">
+            <div class="text-3xl font-bold text-red-600">5000+</div>
+            <p class="text-gray-700 mt-2">Eco-friendly products sold</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition-all duration-300 text-center">
+            <div class="text-3xl font-bold text-red-600">100%</div>
+            <p class="text-gray-700 mt-2">Sustainable sourcing</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition-all duration-300 text-center">
+            <div class="text-3xl font-bold text-red-600">50+</div>
+            <p class="text-gray-700 mt-2">Ethical supplier partners</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="py-12 bg-gray-50" id="reviews">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold mb-8 text-gray-900 section-header">
+          Customer Reviews
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-white/30 backdrop-blur-md p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-red-600/20">
+            <div class="flex items-center mb-4">
+              <div class="flex text-red-600">
+                ★★★★★
+              </div>
+              <span class="ml-2 text-sm text-gray-600">5.0</span>
+            </div>
+            <p class="text-gray-800 italic leading-relaxed">
+              "I bought the Fairphone 6, and it’s a game-changer! The modular design and eco-friendly materials make me feel good about my purchase. EcoKart’s fast delivery was a bonus!"
+            </p>
+            <p class="mt-4 text-gray-900 font-medium">– Sarah M.</p>
+            <p class="text-sm text-gray-500">Purchased on Sep 10, 2025</p>
+          </div>
+          <div class="bg-white/30 backdrop-blur-md p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-red-600/20">
+            <div class="flex items-center mb-4">
+              <div class="flex text-red-600">
+                ★★★★☆
+              </div>
+              <span class="ml-2 text-sm text-gray-600">4.5</span>
+            </div>
+            <p class="text-gray-800 italic leading-relaxed">
+              "The Organic Cotton Men’s Casual Shirt is super comfortable and sustainable. Delivery was quick, and customer service helped me with sizing. Highly recommend EcoKart!"
+            </p>
+            <p class="mt-4 text-gray-900 font-medium">– James K.</p>
+            <p class="text-sm text-gray-500">Purchased on Sep 5, 2025</p>
+          </div>
+          <div class="bg-white/30 backdrop-blur-md p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-red-600/20">
+            <div class="flex items-center mb-4">
+              <div class="flex text-red-600">
+                ★★★★★
+              </div>
+              <span class="ml-2 text-sm text-gray-600">5.0</span>
+            </div>
+            <p class="text-gray-800 italic leading-relaxed">
+              "EcoKart’s commitment to sustainability is inspiring. The Bamboo Toothbrush Set is fantastic—great quality and zero plastic! I’m a loyal customer now."
+            </p>
+            <p class="mt-4 text-gray-900 font-medium">– Priya R.</p>
+            <p class="text-sm text-gray-500">Purchased on Aug 28, 2025</p>
+          </div>
+          <div class="bg-white/30 backdrop-blur-md p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-red-600/20">
+            <div class="flex items-center mb-4">
+              <div class="flex text-red-600">
+                ★★★★☆
+              </div>
+              <span class="ml-2 text-sm text-gray-600">4.8</span>
+            </div>
+            <p class="text-gray-800 italic leading-relaxed">
+              "Loved the Adidas Stan Smith Sneakers! The recycled materials make them stylish and eco-conscious. Shipping took a bit, but worth the wait."
+            </p>
+            <p class="mt-4 text-gray-900 font-medium">– Arjun S.</p>
+            <p class="text-sm text-gray-500">Purchased on Sep 12, 2025</p>
+          </div>
+          <div class="bg-white/30 backdrop-blur-md p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-red-600/20">
+            <div class="flex items-center mb-4">
+              <div class="flex text-red-600">
+                ★★★★★
+              </div>
+              <span class="ml-2 text-sm text-gray-600">5.0</span>
+            </div>
+            <p class="text-gray-800 italic leading-relaxed">
+              "The GreenPan Ceramic Frying Pan is perfect for healthy cooking. EcoKart’s packaging was 100% plastic-free, which I appreciate!"
+            </p>
+            <p class="mt-4 text-gray-900 font-medium">– Ananya P.</p>
+            <p class="text-sm text-gray-500">Purchased on Sep 3, 2025</p>
+          </div>
+          <div class="bg-white/30 backdrop-blur-md p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-red-600/20">
+            <div class="flex items-center mb-4">
+              <div class="flex text-red-600">
+                ★★★★☆
+              </div>
+              <span class="ml-2 text-sm text-gray-600">4.7</span>
+            </div>
+            <p class="text-gray-800 italic leading-relaxed">
+              "The Eco Gardening Guide is a must-have for sustainable gardeners. EcoKart’s service was top-notch, though I wish shipping was faster."
+            </p>
+            <p class="mt-4 text-gray-900 font-medium">– Vikram T.</p>
+            <p class="text-sm text-gray-500">Purchased on Aug 30, 2025</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ (Expandable Cards) -->
+    <section class="py-8 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl font-bold mb-6 text-gray-900 section-header">
+          Frequently Asked Questions
+        </h2>
+        <div id="accordion-flush" data-accordion="collapse" class="space-y-4">
+          <div class="bg-white rounded-lg shadow hover:shadow-lg transition-all duration-300">
+            <button
+              type="button"
+              class="flex items-center justify-between w-full p-6 text-left text-lg font-semibold text-gray-900 hover:bg-gray-50 focus:outline-none"
+              data-accordion-target="#faq-1-body"
+              aria-expanded="false"
+              aria-controls="faq-1-body"
+            >
+              <span>What is EcoKart’s return policy?</span>
+              <span class="w-5 h-5 shrink-0 text-gray-900 transition-transform duration-300 toggle-icon">+</span>
+            </button>
+            <div id="faq-1-body" class="hidden" aria-labelledby="faq-1">
+              <div class="p-6 border-t border-gray-200 bg-gray-50">
+                <p class="text-gray-700">
+                  We offer a 30-day return policy for unused items in their original packaging. Contact our support team at support@ecokart.com for assistance.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-lg shadow hover:shadow-lg transition-all duration-300">
+            <button
+              type="button"
+              class="flex items-center justify-between w-full p-6 text-left text-lg font-semibold text-gray-900 hover:bg-gray-50 focus:outline-none"
+              data-accordion-target="#faq-2-body"
+              aria-expanded="false"
+              aria-controls="faq-2-body"
+            >
+              <span>Are your products eco-friendly?</span>
+              <span class="w-5 h-5 shrink-0 text-gray-900 transition-transform duration-300 toggle-icon">+</span>
+            </button>
+            <div id="faq-2-body" class="hidden" aria-labelledby="faq-2">
+              <div class="p-6 border-t border-gray-200 bg-gray-50">
+                <p class="text-gray-700">
+                  Yes, all our products are sourced from sustainable and ethical suppliers to minimize environmental impact, using materials like recycled plastics, organic cotton, and FSC-certified wood.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-lg shadow hover:shadow-lg transition-all duration-300">
+            <button
+              type="button"
+              class="flex items-center justify-between w-full p-6 text-left text-lg font-semibold text-gray-900 hover:bg-gray-50 focus:outline-none"
+              data-accordion-target="#faq-3-body"
+              aria-expanded="false"
+              aria-controls="faq-3-body"
+            >
+              <span>How can I track my order?</span>
+              <span class="w-5 h-5 shrink-0 text-gray-900 transition-transform duration-300 toggle-icon">+</span>
+            </button>
+            <div id="faq-3-body" class="hidden" aria-labelledby="faq-3">
+              <div class="p-6 border-t border-gray-200 bg-gray-50">
+                <p class="text-gray-700">
+                  Once your order ships, you’ll receive a tracking link via email to monitor your package’s progress. Check your spam folder if you don’t see it.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-lg shadow hover:shadow-lg transition-all duration-300">
+            <button
+              type="button"
+              class="flex items-center justify-between w-full p-6 text-left text-lg font-semibold text-gray-900 hover:bg-gray-50 focus:outline-none"
+              data-accordion-target="#faq-4-body"
+              aria-expanded="false"
+              aria-controls="faq-4-body"
+            >
+              <span>What payment methods does EcoKart accept?</span>
+              <span class="w-5 h-5 shrink-0 text-gray-900 transition-transform duration-300 toggle-icon">+</span>
+            </button>
+            <div id="faq-4-body" class="hidden" aria-labelledby="faq-4">
+              <div class="p-6 border-t border-gray-200 bg-gray-50">
+                <p class="text-gray-700">
+                  We accept UPI, credit/debit cards, net banking, and cash on delivery (COD) for most regions. All payments are processed securely.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-lg shadow hover:shadow-lg transition-all duration-300">
+            <button
+              type="button"
+              class="flex items-center justify-between w-full p-6 text-left text-lg font-semibold text-gray-900 hover:bg-gray-50 focus:outline-none"
+              data-accordion-target="#faq-5-body"
+              aria-expanded="false"
+              aria-controls="faq-5-body"
+            >
+              <span>How long does shipping take?</span>
+              <span class="w-5 h-5 shrink-0 text-gray-900 transition-transform duration-300 toggle-icon">+</span>
+            </button>
+            <div id="faq-5-body" class="hidden" aria-labelledby="faq-5">
+              <div class="p-6 border-t border-gray-200 bg-gray-50">
+                <p class="text-gray-700">
+                  Shipping typically takes 3-7 business days within India, depending on your location. International shipping may take 7-14 days.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-lg shadow hover:shadow-lg transition-all duration-300">
+            <button
+              type="button"
+              class="flex items-center justify-between w-full p-6 text-left text-lg font-semibold text-gray-900 hover:bg-gray-50 focus:outline-none"
+              data-accordion-target="#faq-6-body"
+              aria-expanded="false"
+              aria-controls="faq-6-body"
+            >
+              <span>Do you offer international shipping?</span>
+              <span class="w-5 h-5 shrink-0 text-gray-900 transition-transform duration-300 toggle-icon">+</span>
+            </button>
+            <div id="faq-6-body" class="hidden" aria-labelledby="faq-6">
+              <div class="p-6 border-t border-gray-200 bg-gray-50">
+                <p class="text-gray-700">
+                  Yes, we ship to select international destinations. Check our shipping page or contact support@ecokart.com for details on availability and costs.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-12 bg-gray-50" id="newsletter">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold mb-8 text-gray-900  section-header">
+          Subscribe to Our Newsletter
+        </h2>
+        <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border-l-4 border-red-600">
+          <p class="text-gray-700 text-lg leading-relaxed mb-6">
+            Stay in the loop with exclusive deals, new eco-friendly arrivals, and tips for sustainable living!
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              class="w-full sm:w-80 px-4 py-3 rounded-full border border-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 transition-all duration-300"
+            />
+            <button
+              class="px-8 py-3 bg-red-600 text-white font-semibold rounded-full hover:bg-red-700 active:scale-95 transition-all duration-300"
+            >
+              Subscribe
+            </button>
+          </div>
+          <p class="text-sm text-gray-500 mt-4">
+            We respect your privacy. Unsubscribe anytime.
+          </p>
         </div>
       </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-gray-300 py-8 mt-12">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col md:flex-row justify-between items-center">
-          <div class="mb-4 md:mb-0">
-            <h2 class="text-xl font-bold text-white">EcoKart</h2>
-            <p class="text-sm">Sustainable shopping for a greener tomorrow.</p>
-          </div>
-          <div class="flex space-x-6">
-            <a href="checkout.html" class="hover:text-white">Cart</a>
-            <a href="mailto:arjoghosh123@gmail.com" class="hover:text-white"
-              >Contact</a
-            >
-            <a href="team.html" class="hover:text-white">Teams</a>
-          </div>
-        </div>
-        <div class="mt-6 text-center text-sm text-gray-500">
-          © 2025 EcoKart. All rights reserved to Arjo Ghosh
+    <footer class="bg-gray-800 text-gray-300 py-12 mt-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Main Footer Content -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- Brand Section -->
+      <div class="mb-6 lg:mb-0">
+        <h2 class="text-2xl font-extrabold text-white">
+          <span class="text-green-500">Eco</span>Kart
+        </h2>
+        <p class="text-sm text-gray-400 mt-2 leading-relaxed">
+          Sustainable shopping for a greener tomorrow. Join us in making eco-friendly choices that protect our planet.
+        </p>
+        <!-- Social Media Icons -->
+        <div class="mt-4 flex space-x-4">
+          <a
+            href="https://x.com"
+            class="text-gray-300 hover:text-green-500 transition-colors duration-300"
+            aria-label="Follow EcoKart on Twitter/X"
+          >
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+          </a>
+          <a
+            href="https://instagram.com"
+            class="text-gray-300 hover:text-green-500 transition-colors duration-300"
+            aria-label="Follow EcoKart on Instagram"
+          >
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849s-.012 3.584-.069 4.849c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849s.012-3.584.07-4.849c.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.332.014 7.052.072 2.951.227.227 2.951.072 7.052.014 8.332 0 8.741 0 12s.014 3.668.072 4.948c.155 4.101 2.879 6.825 6.98 6.98 1.28.058 1.689.072 4.948.072s3.668-.014 4.948-.072c4.101-.155 6.825-2.879 6.98-6.98.058-1.28.072-1.689.072-4.948s-.014-3.668-.072-4.948c-.155-4.101-2.879-6.825-6.98-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100-2.88 1.44 1.44 0 000 2.88z"/>
+            </svg>
+          </a>
+          <a
+            href="https://facebook.com"
+            class="text-gray-300 hover:text-green-500 transition-colors duration-300"
+            aria-label="Follow EcoKart on Facebook"
+          >
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+          </a>
         </div>
       </div>
-    </footer>
+      <!-- Navigation Links -->
+      <div class="mb-6 lg:mb-0">
+        <h3 class="text-lg font-semibold text-white mb-4">Explore</h3>
+        <ul class="space-y-2 text-sm">
+          <li>
+            <a href="#products" class="hover:text-green-500 transition-colors duration-300" aria-label="View Products">
+              Products
+            </a>
+          </li>
+          <li>
+            <a href="#about" class="hover:text-green-500 transition-colors duration-300" aria-label="About EcoKart">
+              About Us
+            </a>
+          </li>
+          <li>
+            <a href="team.html" class="hover:text-green-500 transition-colors duration-300" aria-label="Meet Our Team">
+              Team
+            </a>
+          </li>
+          <li>
+            <a href="wishlist.html" class="hover:text-green-500 transition-colors duration-300" aria-label="View Wishlist">
+              Wishlist
+            </a>
+          </li>
+          <li>
+            <a href="checkout.html" class="hover:text-green-500 transition-colors duration-300" aria-label="View Cart">
+              Cart
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- Contact Info -->
+      <div class="mb-6 lg:mb-0">
+        <h3 class="text-lg font-semibold text-white mb-4">Contact Us</h3>
+        <ul class="space-y-2 text-sm">
+          <li>
+            <a
+              href="mailto:support@ecokart.com"
+              class="hover:text-green-500 transition-colors duration-300"
+              aria-label="Email EcoKart support"
+            >
+              support@ecokart.com
+            </a>
+          </li>
+          <li>
+            <a
+              href="tel:+911234567890"
+              class="hover:text-green-500 transition-colors duration-300"
+              aria-label="Call EcoKart support"
+            >
+              +91 123-456-7890
+            </a>
+          </li>
+          <li>
+            <span class="text-gray-400">123 Green Street, Kolkata, India</span>
+          </li>
+        </ul>
+      </div>
+      <!-- Newsletter Signup -->
+      <div>
+        <h3 class="text-lg font-semibold text-white mb-4">Stay Updated</h3>
+        <p class="text-sm text-gray-400 mb-4">
+          Subscribe for exclusive deals and eco-friendly tips!
+        </p>
+        <form class="flex flex-col sm:flex-row gap-2">
+          <input
+            type="email"
+            placeholder="Enter your email"
+            class="px-4 py-2 rounded-lg bg-gray-700 text-gray-300 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-500 transition-all duration-300"
+            aria-label="Email for newsletter subscription"
+          />
+          <button
+            type="submit"
+            class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 active:scale-95 transition-all duration-200 shadow-md hover:shadow-lg"
+            aria-label="Subscribe to EcoKart newsletter"
+          >
+            Subscribe
+          </button>
+        </form>
+      </div>
+    </div>
+    <!-- Pencil Footer (Creative Section) -->
+    <div class="mt-8 pt-8 border-t border-gray-700 text-center">
+      <p class="text-sm text-gray-400 italic">
+        "Small choices, big impact – shop sustainably with EcoKart."
+      </p>
+      <div class="mt-4 text-sm text-gray-500">
+        © 2025 EcoKart. All rights reserved to Arjo Ghosh.
+      </div>
+    </div>
+  </div>
+</footer>
   </body>
 </html>

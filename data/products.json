@@ -3,8 +3,10 @@
     "id": 1,
     "name": "Fairphone 6",
     "price": 55999,
+    "originalPrice": 64999,
     "image": "./images/fairphone.jpg",
     "category": "Electronics",
+    "section": "onSale",
     "description": {
       "summary": "Modular sustainable smartphone made with fair-trade, recycled materials.",
       "highlights": [
@@ -24,8 +26,10 @@
     "id": 2,
     "name": "House of Marley - Headphones",
     "price": 12999,
+    "originalPrice": 15999,
     "image": "./images/marley-headphone.jpg",
     "category": "Electronics",
+    "section": "onSale",
     "description": {
       "summary": "Wireless headphones crafted from FSC-certified wood and recycled aluminum.",
       "highlights": [
@@ -45,8 +49,10 @@
     "id": 3,
     "name": "Organic Cotton Men's Casual Shirt",
     "price": 1499,
+    "originalPrice": 1999,
     "image": "./images/nasties-shirt.jpg",
     "category": "Fashion",
+    "section": "onSale",
     "description": {
       "summary": "Fair-trade certified men’s casual shirt made from 100% organic cotton.",
       "highlights": [
@@ -68,6 +74,7 @@
     "price": 6999,
     "image": "./images/stan-smith-sneakers.jpg",
     "category": "Fashion",
+    "section": "newArrivals",
     "description": {
       "summary": "Classic sneakers redesigned with recycled polyester and vegan materials.",
       "highlights": [
@@ -89,6 +96,7 @@
     "price": 2199,
     "image": "./images/green-pan.jpg",
     "category": "Home & Kitchen",
+    "section": "newArrivals",
     "description": {
       "summary": "Healthy frying pan with PFAS, PFOA, lead, and cadmium-free ceramic coating.",
       "highlights": [
@@ -110,6 +118,7 @@
     "price": 3499,
     "image": "./images/eco-mixer.jpg",
     "category": "Home & Kitchen",
+    "section": "newArrivals",
     "description": {
       "summary": "Energy-efficient mixer grinder with jars made from recyclable materials.",
       "highlights": [
@@ -131,6 +140,7 @@
     "price": 1999,
     "image": "./images/fair-trade-football.jpg",
     "category": "Sports",
+    "section": "newArrivals",
     "description": {
       "summary": "Fairtrade-certified football made with natural rubber and vegan materials.",
       "highlights": [
@@ -152,6 +162,7 @@
     "price": 2499,
     "image": "./images/cork-yoga-mat.jpg",
     "category": "Sports",
+    "section": "newArrivals",
     "description": {
       "summary": "Biodegradable yoga mat made with natural cork and tree rubber.",
       "highlights": [
@@ -169,10 +180,11 @@
   },
   {
     "id": 9,
-    "name": "Learn Python the Green Way",
+    "name": "Organic Home Gardening",
     "price": 799,
-    "image": "./images/eco-python.jpg",
+    "image": "./images/organic-home gardening.jpg",
     "category": "Books",
+    "section": "comingSoon",
     "description": {
       "summary": "Python programming guide printed on recycled paper using vegetable inks.",
       "highlights": [
@@ -194,6 +206,7 @@
     "price": 599,
     "image": "./images/eco-novel.jpg",
     "category": "Books",
+    "section": "comingSoon",
     "description": {
       "summary": "Thriller novel sustainably printed on recycled paper with eco-inks.",
       "highlights": [
@@ -215,6 +228,7 @@
     "price": 749,
     "image": "./images/face-cream.jpg",
     "category": "Beauty",
+    "section": "comingSoon",
     "description": {
       "summary": "Organic moisturizer made with aloe, shea butter, and packed in eco jars.",
       "highlights": [
@@ -236,6 +250,7 @@
     "price": 1299,
     "image": "./images/eco-lipstick.jpg",
     "category": "Beauty",
+    "section": "comingSoon",
     "description": {
       "summary": "Vegan lipsticks made from natural pigments in compostable packaging.",
       "highlights": [
