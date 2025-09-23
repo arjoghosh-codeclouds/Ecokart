@@ -12,22 +12,30 @@
         height: 100%;
         font-family: 'Inter', sans-serif;
       }
+      /* Custom animation for checkmark */
+      @keyframes scaleIn {
+        0% { transform: scale(0); opacity: 0; }
+        100% { transform: scale(1); opacity: 1; }
+      }
+      .animate-scale-in {
+        animation: scaleIn 0.5s ease-out forwards;
+      }
     </style>
   </head>
-  <body class="bg-gray-50 min-h-screen flex flex-col">
-    <!-- Navbar (same style as other pages) -->
-    <nav class="flex items-center justify-between p-4 bg-gray-800 text-white shadow">
+  <body class="bg-gray-100 min-h-screen flex flex-col">
+    <!-- Navbar -->
+    <nav class="flex items-center justify-between p-4 bg-gray-800 text-white shadow-lg">
       <!-- Logo -->
-      <div class="flex-shrink-0 flex items-center ml-12">
-        <a href="index.html" class="text-2xl font-extrabold tracking-wide">
-          <span class="text-green-500">Eco</span><span class="text-white">Kart</span>
+      <div class="flex-shrink-0 flex items-center ml-4 md:ml-12">
+        <a href="index.html" class="text-3xl font-extrabold tracking-tight">
+          <span class="text-green-300">Eco</span><span class="text-white">Kart</span>
         </a>
       </div>
 
-      <!-- Right: Cart -->
-      <div class="flex items-center space-x-4 mr-2">
-        <a href="checkout.html"
-          class="relative flex items-center bg-white text-green-700 px-4 py-1.5 rounded-full font-medium shadow hover:bg-gray-100 transition">
+      <!-- Right: Home Button -->
+      <div class="flex items-center space-x-4 mr-4">
+        <a href="index.html"
+          class="relative flex items-center bg-gray-800 text-white px-6 py-2 rounded-full font-semibold shadow-md hover:bg-green-600 transition transform hover:scale-105">
           <span class="ml-2">Home</span>
         </a>
       </div>
@@ -35,60 +43,66 @@
 
     <!-- Main Section -->
     <main class="flex-grow flex items-center justify-center px-4 py-12">
-      <section class="w-full max-w-4xl bg-white rounded-3xl shadow-2xl p-10 text-center relative overflow-hidden">
+      <section class="w-full max-w-5xl bg-white rounded-3xl shadow-2xl p-8 md:p-12 text-center relative overflow-hidden transform transition-all duration-500 animate-scale-in">
         <!-- Decorative Background -->
-        <div class="absolute inset-0 bg-gradient-to-r from-green-50 to-green-100 opacity-50 -z-10"></div>
+        <div class="absolute inset-0 bg-gradient-to-br from-green-100 to-green-200 opacity-60 -z-10"></div>
 
         <!-- Success Icon -->
-        <div class="bg-gray-800 text-white w-28 h-28 flex items-center justify-center rounded-full mb-6 shadow-lg mx-auto animate-bounce">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <div class="bg-green-600 text-white w-24 h-24 md:w-32 md:h-32 flex items-center justify-center rounded-full mb-8 shadow-xl mx-auto animate-scale-in">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16 md:w-20 md:h-20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
           </svg>
         </div>
 
         <!-- Title -->
-        <h2 class="text-4xl font-extrabold text-gray-800 mb-3">Thank You for Your Order! 🎉</h2>
-        <p class="text-gray-600 text-lg mb-10 max-w-2xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">Thank You for Your Order! 🎉</h2>
+        <p class="text-gray-600 text-base md:text-lg mb-10 max-w-2xl mx-auto">
           Your order has been placed successfully. A confirmation email will be sent to you shortly.
         </p>
 
         <!-- Order Details -->
         <div id="order-details"
-          class="w-full bg-white border border-gray-200 rounded-2xl p-6 text-left shadow-md mb-8">
+          class="w-full bg-white border border-green-200 rounded-2xl p-6 md:p-8 text-left shadow-md mb-8 hover:shadow-lg transition-shadow duration-300">
           <!-- Filled dynamically by JS -->
         </div>
 
         <!-- Reward Section -->
         <div id="reward-details"
-          class="w-full bg-gradient-to-r from-yellow-50 to-yellow-100 border border-yellow-300 rounded-2xl p-6 text-center shadow-lg mb-8">
+          class="w-full bg-gradient-to-r from-yellow-200 to-yellow-300 border border-yellow-400 rounded-2xl p-6 md:p-8 text-center shadow-md mb-8 hover:shadow-lg transition-shadow duration-300">
           <!-- Filled dynamically by JS -->
         </div>
 
         <!-- Eco-Friendly Tip -->
-        <div class="w-full bg-gray-800 border border-green-300 rounded-2xl p-6 text-left shadow-md mb-8">
-          <h3 class="text-lg font-bold text-white mb-2">🌱 Eco-Friendly Tip</h3>
-          <p class="text-white">You chose EcoKart! By shopping with us, you’ve reduced your carbon footprint. Together, we’re making the planet greener. 💚</p>
+        <div class="w-full bg-green-800 border border-green-400 rounded-2xl p-6 md:p-8 text-left shadow-md mb-8 hover:shadow-lg transition-shadow duration-300">
+          <h3 class="text-xl font-bold text-white mb-3">🌱 Eco-Friendly Tip</h3>
+          <p class="text-green-100 text-sm md:text-base">You chose EcoKart! By shopping with us, you’ve reduced your carbon footprint. Together, we’re making the planet greener. 💚</p>
         </div>
 
         <!-- Emergency Contact -->
-        <div class="w-full bg-red-50 border border-red-300 rounded-2xl p-6 text-left shadow-md mb-8">
-          <h3 class="text-lg font-bold text-red-700 mb-2">📞 Emergency Contact</h3>
-          <p class="text-gray-700">If you face any issue with your order, please reach us at:</p>
-          <ul class="text-gray-800 mt-2 space-y-1">
-            <li>☎️ Customer Care: <span class="font-semibold">1800-123-456</span></li>
-            <li>📧 Email: <a href="mailto:support@ecokart.com" class="text-blue-600 underline">support@ecokart.com</a></li>
-            <li>⏰ Available: 9 AM – 9 PM (All Days)</li>
+        <div class="w-full bg-red-100 border border-red-400 rounded-2xl p-6 md:p-8 text-left shadow-md mb-8 hover:shadow-lg transition-shadow duration-300">
+          <h3 class="text-xl font-bold text-red-800 mb-3">📞 Emergency Contact</h3>
+          <p class="text-gray-700 text-sm md:text-base">If you face any issue with your order, please reach us at:</p>
+          <ul class="text-gray-800 mt-3 space-y-2">
+            <li class="flex items-center">
+              <span class="mr-2">☎️</span> Customer Care: <span class="font-semibold">1800-123-456</span>
+            </li>
+            <li class="flex items-center">
+              <span class="mr-2">📧</span> Email: <a href="mailto:support@ecokart.com" class="text-blue-600 hover:underline">support@ecokart.com</a>
+            </li>
+            <li class="flex items-center">
+              <span class="mr-2">⏰</span> Available: <span class="font-semibold">9 AM – 9 PM (All Days)</span>
+            </li>
           </ul>
         </div>
 
         <!-- Actions -->
-        <div class="mt-8 flex flex-col sm:flex-row justify-center gap-6">
+        <div class="mt-10 flex flex-col sm:flex-row justify-center gap-6">
           <a href="index.html"
-            class="bg-gradient-to-r from-green-600 to-green-500 text-white px-8 py-3 rounded-xl font-semibold shadow-md hover:from-green-700 hover:to-green-600 transition transform hover:scale-105">
+            class="bg-gradient-to-r from-green-600 to-green-500 text-white px-8 py-4 rounded-xl font-semibold text-base shadow-lg hover:from-green-700 hover:to-green-600 transition transform hover:scale-105">
             🛒 Continue Shopping
           </a>
           <a href="checkout.html"
-            class="bg-white border border-gray-300 text-gray-800 px-8 py-3 rounded-xl font-semibold shadow hover:bg-gray-100 transition transform hover:scale-105">
+            class="bg-white border-2 border-green-500 text-green-700 px-8 py-4 rounded-xl font-semibold text-base shadow-lg hover:bg-green-50 hover:border-green-600 transition transform hover:scale-105">
             📦 Track My Order
           </a>
         </div>
@@ -116,9 +130,9 @@
           const itemTotal = (item.price || 0) * (item.qty || 1);
           total += itemTotal;
           itemsHTML += `
-            <li class="flex justify-between border-b pb-2">
-              <span class="text-gray-700">${item.name} × ${item.qty}</span>
-              <span class="text-green-600 font-medium">₹${itemTotal.toFixed(2)}</span>
+            <li class="flex justify-between border-b border-gray-200 py-3">
+              <span class="text-gray-700 font-medium">${item.name} × ${item.qty}</span>
+              <span class="text-green-600 font-semibold">₹${itemTotal.toFixed(2)}</span>
             </li>`;
         });
 
@@ -130,32 +144,32 @@
         });
 
         orderDetailsContainer.innerHTML = `
-          <p class="text-lg font-bold text-gray-800 mb-4">🧾 Order Number: 
+          <p class="text-xl font-bold text-gray-900 mb-4">🧾 Order Number: 
             <span class="text-green-600">${summary.orderNumber}</span>
           </p>
 
           <div class="mb-6">
-            <h3 class="text-lg font-semibold text-gray-700 mb-3">📋 Order Summary</h3>
-            <ul class="text-gray-600 space-y-2">${itemsHTML}</ul>
-            <p class="mt-4 font-bold text-gray-900 border-t pt-3">
+            <h3 class="text-xl font-semibold text-gray-800 mb-3">📋 Order Summary</h3>
+            <ul class="text-gray-600 space-y-3">${itemsHTML}</ul>
+            <p class="mt-4 font-bold text-gray-900 border-t border-gray-200 pt-3 text-lg">
               Total: <span class="text-green-600">₹${total.toFixed(2)}</span>
             </p>
           </div>
 
           <div>
-            <h3 class="text-lg font-semibold text-gray-700">🚚 Estimated Delivery</h3>
-            <p class="text-gray-600">Arrives by <span class="font-medium text-gray-900">${deliveryStr}</span></p>
+            <h3 class="text-xl font-semibold text-gray-800">🚚 Estimated Delivery</h3>
+            <p class="text-gray-600 text-sm md:text-base">Arrives by <span class="font-medium text-gray-900">${deliveryStr}</span></p>
           </div>
         `;
 
         // ================= Reward Section =================
         const goldCash = Math.floor(total / 100);
         rewardContainer.innerHTML = `
-          <h3 class="text-xl font-extrabold text-yellow-700 mb-2">🏆 Congratulations!</h3>
-          <p class="text-gray-800">You’ve earned 
+          <h3 class="text-2xl font-extrabold text-yellow-800 mb-3">🏆 Congratulations!</h3>
+          <p class="text-gray-800 text-base md:text-lg">You’ve earned 
             <span class="text-yellow-600 font-bold">${goldCash} EcoKart Gold Cash</span> 🎁
           </p>
-          <p class="text-gray-600 text-sm mt-2">Use your Gold Cash on your next purchase to save more.</p>
+          <p class="text-gray-600 text-sm mt-3">Use your Gold Cash on your next purchase to save more.</p>
         `;
 
         // ================= Cleanup =================
@@ -165,3 +179,5 @@
     </script>
   </body>
 </html>
+```
+

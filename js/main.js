@@ -1,3 +1,4 @@
+
 // ================== GLOBAL PRODUCT CACHE ==================
 let allProducts = {
   onSale: [],
@@ -204,13 +205,20 @@ function updateCartCount() {
   const cart = getCart();
   const count = cart.reduce((sum, i) => sum + i.qty, 0);
   const countEl = document.getElementById("cart-count");
+  const mobileCountEl = document.getElementById("mobile-cart-count");
   if (countEl) countEl.textContent = count;
+  if (mobileCountEl) mobileCountEl.textContent = count;
 }
 
 function animateCart() {
   const badge = document.getElementById("cart-count");
+  const mobileBadge = document.getElementById("mobile-cart-count");
   badge.classList.add("scale-125");
-  setTimeout(() => badge.classList.remove("scale-125"), 300);
+  mobileBadge.classList.add("scale-125");
+  setTimeout(() => {
+    badge.classList.remove("scale-125");
+    mobileBadge.classList.remove("scale-125");
+  }, 300);
 }
 
 function buyNow(id) {
@@ -223,6 +231,9 @@ function buyNow(id) {
       id: product.id,
       name: product.name,
       price: product.price,
+      image: product.image,
+      description: product.description,
+      originalPrice: product.originalPrice || '',
       qty: 1,
     })
   );
@@ -247,7 +258,16 @@ function toggleWishlist(id) {
 
   if (index === -1) {
     const product = Object.values(allProducts).flat().find((p) => p.id === id);
-    if (product) wishlist.push({ id: product.id, name: product.name, price: product.price, image: product.image });
+    if (product) {
+      wishlist.push({
+        id: product.id,
+        name: product.name,
+        price: product.price,
+        image: product.image,
+        description: product.description, // Include description
+        originalPrice: product.originalPrice || ''
+      });
+    }
   } else {
     wishlist.splice(index, 1);
   }
@@ -260,13 +280,20 @@ function updateWishlistCount() {
   const wishlist = getWishlist();
   const count = wishlist.length;
   const countEl = document.getElementById("wishlist-count");
+  const mobileCountEl = document.getElementById("mobile-wishlist-count");
   if (countEl) countEl.textContent = count;
+  if (mobileCountEl) mobileCountEl.textContent = count;
 }
 
 function animateWishlist() {
   const badge = document.getElementById("wishlist-count");
+  const mobileBadge = document.getElementById("mobile-wishlist-count");
   badge.classList.add("scale-125");
-  setTimeout(() => badge.classList.remove("scale-125"), 300);
+  mobileBadge.classList.add("scale-125");
+  setTimeout(() => {
+    badge.classList.remove("scale-125");
+    mobileBadge.classList.remove("scale-125");
+  }, 300);
 }
 
 // ================== CATEGORY & SEARCH FILTER ==================
