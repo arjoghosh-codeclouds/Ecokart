@@ -131,4 +131,4 @@ For issues: Open a GitHub issue.
 
 ---
 
-*© 2025 EcoKart. All rights reserved.*
+*© 2025 EcoKart. All rights reserved to Arjo Ghosh*
